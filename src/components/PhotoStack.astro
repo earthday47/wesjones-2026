@@ -1,0 +1,54 @@
+---
+/**
+ * A stack of photos where the back cards peek out; clicking cycles them.
+ */
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  photos: { image: ImageMetadata; alt: string }[];
+}
+
+const { photos } = Astro.props;
+const cards = await Promise.all(
+  photos.map(async ({ image, alt }) => {
+    const small = await getImage({ src: image, width: 420, format: 'webp' });
+    const large = await getImage({ src: image, width: Math.min(image.width, 860), format: 'webp' });
+    return { alt, src: large.src, srcset: `${small.src} 420w, ${large.src} ${large.attributes.width ?? 860}w` };
+  })
+);
+---
+
+<div class="photo-stack" data-photo-stack style={`--count: ${cards.length}`}>
+  <button class="photo-stack__button" type="button" aria-label="Show next photo">
+    {cards.map((card, i) => (
+      <img
+        class="photo-stack__card"
+        data-pos={i}
+        src={card.src}
+        srcset={card.srcset}
+        sizes="(min-width: 900px) 420px, 100vw"
+        alt={card.alt}
+        aria-hidden={i > 0 ? 'true' : undefined}
+        loading={i === 0 ? 'eager' : 'lazy'}
+        fetchpriority={i === 0 ? 'high' : undefined}
+      />
+    ))}
+  </button>
+</div>
+
+<script is:inline>
+  document.querySelectorAll('[data-photo-stack]').forEach((stack) => {
+    const cards = [...stack.querySelectorAll('.photo-stack__card')];
+    if (cards.length < 2) return;
+    stack.querySelector('button').addEventListener('click', () => {
+      cards.forEach((card) => {
+        const pos = Number(card.dataset.pos);
+        const next = (pos - 1 + cards.length) % cards.length;
+        card.classList.toggle('is-leaving', pos === 0);
+        card.dataset.pos = String(next);
+        card.setAttribute('aria-hidden', next === 0 ? 'false' : 'true');
+      });
+    });
+  });
+</script>

@@ -27,7 +27,19 @@
       "linkHover": "#5472b8",
       "jobBadge": "#009688",
       "projectBadge": "#3f51b5"
-    }
+    },
+    "profiles": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/earthday47",
+        "icon": "github"
+      },
+      {
+        "label": "Drupal.org",
+        "url": "https://www.drupal.org/u/earthday47",
+        "icon": "drupal"
+      }
+    ]
   },
   "pages": {
     "home": {

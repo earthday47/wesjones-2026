@@ -1,23 +1,36 @@
 ---
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
+import PhotoStack from '../components/PhotoStack.astro';
 import Timeline from '../components/Timeline';
 import data from '../data/site.json';
 import { inline } from '../lib/markdown';
-import code from '../assets/img/code.jpg';
+import wesDrupalCon from '../assets/img/wes-drupalcon.jpg';
+import wesThumbsUp from '../assets/img/wes-thumbs-up.jpg';
+import wesDrupalSelfie from '../assets/img/wes-drupal-selfie.jpg';
 
 const { site, pages } = data;
 const page = pages.work;
+
+const photos = [
+  { image: wesDrupalCon, alt: 'Wes Jones wearing a DrupalCon Pittsburgh 2023 badge in front of the Drupal mascot.' },
+  { image: wesThumbsUp, alt: 'Wes Jones giving two thumbs up in front of a giant inflatable Drupal drop at DrupalCon.' },
+  { image: wesDrupalSelfie, alt: 'Wes Jones and a fellow developer taking a selfie with a Drupal mascot cutout in front of a T. rex model.' },
+];
 ---
 
 <Base title={`${page.heading} | ${site.name}`} bodyClass="work">
-  <Hero image={code} position="right">
-    <h1>{page.heading}</h1>
-    <p set:html={inline(page.intro)} />
-    <ul class="actions">
-      <li><a class="button" href={site.resume}>{page.resumeButton}</a></li>
-    </ul>
-  </Hero>
+  <section class="split-hero">
+    <div class="split-hero__text">
+      <h1>{page.heading}</h1>
+      <p set:html={inline(page.intro)} />
+      <ul class="actions">
+        <li><a class="button" href={site.resume}>{page.resumeButton}</a></li>
+      </ul>
+    </div>
+    <div class="split-hero__media">
+      <PhotoStack photos={photos} />
+    </div>
+  </section>
 
   <section class="section">
     <h2 class="section__heading">{page.timelineHeading}</h2>

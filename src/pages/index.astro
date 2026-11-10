@@ -1,5 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
+import ProfileLinks from '../components/ProfileLinks.astro';
 import Base from '../layouts/Base.astro';
 import data from '../data/site.json';
 import { inline } from '../lib/markdown';
@@ -15,9 +16,9 @@ const headingLines = page.heading
 ---
 
 <Base title={site.homeTitle} bodyClass="home">
-  <section class="home-hero">
-    <div class="home-hero__text">
-      <h1>{headingLines.map((line) => <span class="home-hero__line" set:html={line} />)}</h1>
+  <section class="split-hero">
+    <div class="split-hero__text">
+      <h1>{headingLines.map((line) => <span class="split-hero__line" set:html={line} />)}</h1>
       {page.body.map((p) => <p set:html={inline(p)} />)}
       <ul class="actions">
         {page.links.map((link, i) => (
@@ -28,8 +29,9 @@ const headingLines = page.heading
           </li>
         ))}
       </ul>
+      <ProfileLinks profiles={site.profiles} />
     </div>
-    <figure class="home-hero__media">
+    <figure class="split-hero__media">
       <Picture
         src={wesBass}
         formats={['avif', 'webp']}
@@ -39,7 +41,7 @@ const headingLines = page.heading
         loading="eager"
         fetchpriority="high"
       />
-      <figcaption class="home-hero__caption">{page.photoCredit}</figcaption>
+      <figcaption class="split-hero__caption">{page.photoCredit}</figcaption>
     </figure>
   </section>
 
