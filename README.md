@@ -1,4 +1,4 @@
-# wesjones.net
+# WesJones.net
 
 Source for [wesjones.net](https://www.wesjones.net/), the personal site of Wes Jones, a Senior Software Engineer specializing in Drupal, AWS cloud integration, and AI-accelerated development.
 
