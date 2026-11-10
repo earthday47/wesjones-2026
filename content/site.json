@@ -1,0 +1,138 @@
+{
+  "site": {
+    "name": "WesJones.net",
+    "url": "https://www.wesjones.net/",
+    "homeTitle": "Enterprise Drupal website development Rochester NY | WesJones.net",
+    "copyright": "© WesJones.net",
+    "nav": [
+      { "label": "Work", "path": "/work" },
+      { "label": "Contact", "path": "/contact" }
+    ],
+    "musicLink": { "label": "Looking for music?", "url": "http://music.wesjones.net" },
+    "resume": "assets/files/Resume-WesJones.pdf",
+    "googleAnalytics": "UA-28900790-1",
+    "theme": {
+      "font": "Source Sans Pro (300, 400, 600 + italics)",
+      "background": "#26282b",
+      "text": "#d9d7d4",
+      "link": "#5f85db",
+      "linkHover": "#5472b8",
+      "jobBadge": "#009688",
+      "projectBadge": "#3f51b5",
+      "homeHeroImage": "assets/img/london-eye.jpg",
+      "workHeroImage": "assets/img/code.jpg"
+    }
+  },
+  "pages": {
+    "home": {
+      "path": "/",
+      "heading": "Drupal websites.",
+      "body": [
+        "Wes Jones is a Web developer from **Rochester, NY**, specializing in **Drupal**, **Node.js**, and **multilingual website development**. Wes works for [**Kanopi Studios**](https://www.kanopi.com/).",
+        "Wes speaks Spanish and Mandarin Chinese fluently, and loves [**playing music!**](http://music.wesjones.net/) 🪕"
+      ],
+      "links": [
+        { "label": "View Work history", "path": "/work" },
+        { "label": "Download resume", "path": "assets/files/Resume-WesJones.pdf" }
+      ]
+    },
+    "work": {
+      "path": "/work",
+      "heading": "Work",
+      "intro": "View Wes Jones' work in **Web design**, **Drupal development**, and **PHP/MySQL application development**.",
+      "resumeButton": "View Wes' full resume »",
+      "timelineHeading": "Timeline",
+      "timeline": [
+        {
+          "title": "Senior Engineer at Kanopi Studios",
+          "dates": "2022 - present",
+          "description": ["Drupal support services and development for clients in Drupal 7 and 9."],
+          "projects": [
+            { "title": "The Gilder Lehrman Institute of American History", "links": ["https://www.gilderlehrman.org/"] }
+          ]
+        },
+        {
+          "title": "Senior Engineer at Phase2 Technology",
+          "dates": "2022",
+          "description": ["Drupal backend development support and planning for enterprise level client projects."],
+          "projects": []
+        },
+        {
+          "title": "Senior Software Engineer / Technical Architect at Third and Grove",
+          "dates": "2017 - 2022",
+          "description": ["Development lead for projects, assisting with documentation, sprint planning, estimation, code review, and client communication."],
+          "projects": []
+        },
+        {
+          "title": "Software Engineer at Third & Grove",
+          "dates": "Feb 2015 - Feb 2016",
+          "description": ["Drupal website and application development for enterprise-level clients."],
+          "projects": [
+            { "title": "Quicken", "links": ["http://www.quicken.com/"] },
+            { "title": "King Arthur Flour", "links": ["https://www.kingarthurbaking.com/"] },
+            { "title": "CooperVision", "links": ["https://coopervision.com/"] },
+            { "title": "Third and Grove: Drupal 8 decoupled + Gatsby", "links": ["https://www.thirdandgrove.com/"] },
+            { "title": "Chestnut Hill Realty", "links": ["https://www.chr-apartments.com/"] }
+          ]
+        },
+        {
+          "title": "Freelance Drupal Developer",
+          "dates": "Dec 2011 - present",
+          "description": ["Drupal and PHP application development consultant. Website design and development with PHP/MySQL, Drupal 6, Drupal 7, Wordpress, and more."],
+          "projects": [
+            { "title": "George Eastman House - Technicolor100", "links": ["https://www.eastman.org/technicolor"] },
+            { "title": "Bayer Video Tours", "links": ["http://www.bayervideotours.com/"] },
+            { "title": "Museum of Science", "links": ["http://www.mos.org/", "http://livinglab.org/", "http://nanomedicine-explorer.net/"] }
+          ]
+        },
+        {
+          "title": "SEO Specialist / Web Developer, Accelerate Media",
+          "dates": "Sept 2014 - Jan 2015",
+          "description": ["Website development with Wordpress, Web application development with Yii Framework. Project planning, workload balancing, QA and testing for team of 5 developers."],
+          "projects": [
+            { "title": "Draft Sharks", "links": ["http://www.draftsharks.com/"] },
+            { "title": "Monroe Tractor", "links": ["http://www.monroetractor.com/"] },
+            { "title": "All Collector Cars", "links": ["http://www.allcollectorcars.com/"] },
+            { "title": "IASSIDD", "links": ["https://www.iassidd.org/"] }
+          ]
+        },
+        {
+          "title": "Web Technologies Specialist, The Strong",
+          "dates": "May 2009 - Dec 2011",
+          "description": ["Website development and maintenance, Web application development for user-submission contests."],
+          "projects": [
+            {
+              "title": "The Strong",
+              "links": [
+                "http://www.thestrong.org/",
+                "http://www.museumofplay.org/",
+                "http://www.journalofplay.org/",
+                "http://www.icheg.org/",
+                "http://www.toyhalloffame.org/",
+                "http://www.libraryandarchivesofplay.org/"
+              ]
+            },
+            { "title": "The Strong Online Collections", "links": ["http://www.thestrong.org/online-collections/"] }
+          ]
+        },
+        {
+          "title": "Student Web Programmer, The College at Brockport",
+          "dates": "May 2008 - May 2009",
+          "description": [
+            "Graduated with Bachelor's of Science in Computer Information Systems and Mathematics.",
+            "Development contributed to campus website."
+          ],
+          "projects": [
+            { "title": "The College at Brockport", "links": ["http://www.brockport.edu/"] }
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "path": "/contact",
+      "heading": "Contact",
+      "body": "If you'd like to contact me about custom development, a Website project, or translation services, email me at [wes@wesjones.net](mailto:wes@wesjones.net).",
+      "email": "wes@wesjones.net"
+    }
+  }
+}
