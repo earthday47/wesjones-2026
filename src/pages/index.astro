@@ -3,16 +3,21 @@ import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import data from '../data/site.json';
 import { inline } from '../lib/markdown';
-import wesBass from '../assets/img/wes-bass.jpg';
+import wesBass from '../assets/img/wes-on-stage.jpg';
 
 const { site, pages } = data;
 const page = pages.home;
+
+// Each sentence starts a new line, and hyphenated words never split.
+const headingLines = page.heading
+  .split(/(?<=\.)\s+/)
+  .map((line) => line.replace(/(\S+-\S+)/g, '<span class="nowrap">$1</span>'));
 ---
 
 <Base title={site.homeTitle} bodyClass="home">
   <section class="home-hero">
     <div class="home-hero__text">
-      <h1>{page.heading}</h1>
+      <h1>{headingLines.map((line) => <span class="home-hero__line" set:html={line} />)}</h1>
       {page.body.map((p) => <p set:html={inline(p)} />)}
       <ul class="actions">
         {page.links.map((link, i) => (
@@ -24,17 +29,18 @@ const page = pages.home;
         ))}
       </ul>
     </div>
-    <div class="home-hero__media">
+    <figure class="home-hero__media">
       <Picture
         src={wesBass}
         formats={['avif', 'webp']}
-        widths={[420, 640, 842]}
+        widths={[420, 648]}
         sizes="(min-width: 900px) 420px, 100vw"
         alt="Wes Jones playing bass on an outdoor stage at night."
         loading="eager"
         fetchpriority="high"
       />
-    </div>
+      <figcaption class="home-hero__caption">{page.photoCredit}</figcaption>
+    </figure>
   </section>
 
   <section class="section skills" aria-labelledby="skills-heading">

@@ -32,9 +32,9 @@
   "pages": {
     "home": {
       "path": "/",
-      "heading": "Senior Drupal engineer.",
+      "heading": "15 years of Drupal. Now AI-powered.",
       "body": [
-        "Wes Jones is a Web developer from **Rochester, NY**, specializing in **Drupal**, **Amazon AWS**, and **multilingual website development**.",
+        "Wes Jones is a Senior Software Engineer from **Rochester, NY**, specializing in **Drupal**, **AWS cloud integration** and **AI-accelerated development**.",
         "Wes speaks Spanish and Mandarin Chinese fluently, and loves [**playing music!**](https://linktr.ee/wesperegrine) 🪕"
       ],
       "links": [
@@ -86,7 +86,8 @@
             ]
           }
         ]
-      }
+      },
+      "photoCredit": "Photo by Madison Frentz"
     },
     "work": {
       "path": "/work",
