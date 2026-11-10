@@ -8,9 +8,8 @@
       { "label": "Work", "path": "/work" },
       { "label": "Contact", "path": "/contact" }
     ],
-    "musicLink": { "label": "Looking for music?", "url": "http://music.wesjones.net" },
-    "resume": "assets/files/Resume-WesJones.pdf",
-    "googleAnalytics": "UA-28900790-1",
+    "musicLink": { "label": "Looking for music?", "url": "https://linktr.ee/wesperegrine" },
+    "resume": "/files/Resume-WesJones.pdf",
     "theme": {
       "font": "Source Sans Pro (300, 400, 600 + italics)",
       "background": "#26282b",
@@ -18,9 +17,7 @@
       "link": "#5f85db",
       "linkHover": "#5472b8",
       "jobBadge": "#009688",
-      "projectBadge": "#3f51b5",
-      "homeHeroImage": "assets/img/london-eye.jpg",
-      "workHeroImage": "assets/img/code.jpg"
+      "projectBadge": "#3f51b5"
     }
   },
   "pages": {
@@ -29,11 +26,11 @@
       "heading": "Drupal websites.",
       "body": [
         "Wes Jones is a Web developer from **Rochester, NY**, specializing in **Drupal**, **Node.js**, and **multilingual website development**. Wes works for [**Kanopi Studios**](https://www.kanopi.com/).",
-        "Wes speaks Spanish and Mandarin Chinese fluently, and loves [**playing music!**](http://music.wesjones.net/) 🪕"
+        "Wes speaks Spanish and Mandarin Chinese fluently, and loves [**playing music!**](https://linktr.ee/wesperegrine) 🪕"
       ],
       "links": [
         { "label": "View Work history", "path": "/work" },
-        { "label": "Download resume", "path": "assets/files/Resume-WesJones.pdf" }
+        { "label": "Download resume", "path": "/files/Resume-WesJones.pdf" }
       ]
     },
     "work": {

@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import data from '../data/site.json';
+
+interface Props {
+  title: string;
+  description?: string;
+  bodyClass?: string;
+}
+
+const { title, description = '', bodyClass = '' } = Astro.props;
+const { site } = data;
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+    />
+  </head>
+  <body class={bodyClass}>
+    <div class="page">
+      <header class="site-header">
+        <a class="site-brand" href="/">{site.name}</a>
+        <nav aria-label="Main">
+          <ul class="site-nav">
+            {site.nav.map((item) => (
+              <li>
+                <a href={item.path} aria-current={current === item.path ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
+      <main class="site-main">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p class="site-footer__music">
+          <a href={site.musicLink.url}>{site.musicLink.label}</a> <span aria-hidden="true">🪕</span>
+        </p>
+        <hr />
+        <p class="site-footer__copyright">{site.copyright} {year}</p>
+      </footer>
+    </div>
+  </body>
+</html>

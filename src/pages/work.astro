@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Timeline from '../components/Timeline';
+import data from '../data/site.json';
+import { inline } from '../lib/markdown';
+import code from '../assets/img/code.jpg';
+
+const { site, pages } = data;
+const page = pages.work;
+---
+
+<Base title={`${page.heading} | ${site.name}`} bodyClass="work">
+  <Hero image={code} position="right">
+    <h1>{page.heading}</h1>
+    <p set:html={inline(page.intro)} />
+  </Hero>
+
+  <div class="content">
+    <p><a class="button" href={site.resume}>{page.resumeButton}</a></p>
+    <h2>{page.timelineHeading}</h2>
+    <Timeline jobs={page.timeline} />
+  </div>
+</Base>

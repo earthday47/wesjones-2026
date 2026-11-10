@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/site.json';
+import { inline } from '../lib/markdown';
+
+const { site, pages } = data;
+const page = pages.contact;
+---
+
+<Base title={`${page.heading} | ${site.name}`} bodyClass="contact">
+  <div class="content">
+    <h1>{page.heading}</h1>
+    <p class="lead" set:html={inline(page.body)} />
+  </div>
+</Base>
