@@ -209,7 +209,7 @@ a:hover {
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
 .button:hover {
@@ -634,6 +634,69 @@ a:hover {
 @media (min-width: 768px) {
   .timeline__job {
     padding-left: 48px;
+  }
+}
+
+/* Motion */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .home-hero__line,
+  .home-hero__text > p,
+  .home-hero__text > .actions,
+  .hero__inner > * {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .home-hero__line:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .home-hero__text > p:nth-of-type(1),
+  .hero__inner > :nth-child(2) {
+    animation-delay: 0.22s;
+  }
+
+  .home-hero__text > p:nth-of-type(2) {
+    animation-delay: 0.3s;
+  }
+
+  .home-hero__text > .actions,
+  .hero__inner > :nth-child(3) {
+    animation-delay: 0.38s;
+  }
+
+  .home-hero__media {
+    animation: settle 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s both;
+  }
+
+  /* The script adds .reveal, so content stays visible without JS. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
   }
 }
 
