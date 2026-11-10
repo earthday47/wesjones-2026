@@ -14,11 +14,13 @@ const page = pages.work;
   <Hero image={code} position="right">
     <h1>{page.heading}</h1>
     <p set:html={inline(page.intro)} />
+    <ul class="actions">
+      <li><a class="button" href={site.resume}>{page.resumeButton}</a></li>
+    </ul>
   </Hero>
 
-  <div class="content">
-    <p><a class="button" href={site.resume}>{page.resumeButton}</a></p>
-    <h2>{page.timelineHeading}</h2>
+  <section class="section">
+    <h2 class="section__heading">{page.timelineHeading}</h2>
     <Timeline jobs={page.timeline} />
-  </div>
+  </section>
 </Base>

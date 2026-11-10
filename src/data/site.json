@@ -5,10 +5,19 @@
     "homeTitle": "Enterprise Drupal website development Rochester NY | WesJones.net",
     "copyright": "© WesJones.net",
     "nav": [
-      { "label": "Work", "path": "/work" },
-      { "label": "Contact", "path": "/contact" }
+      {
+        "label": "Work",
+        "path": "/work"
+      },
+      {
+        "label": "Contact",
+        "path": "/contact"
+      }
     ],
-    "musicLink": { "label": "Looking for music?", "url": "https://linktr.ee/wesperegrine" },
+    "musicLink": {
+      "label": "Looking for music?",
+      "url": "https://linktr.ee/wesperegrine"
+    },
     "resume": "/files/Resume-WesJones.pdf",
     "theme": {
       "font": "Source Sans Pro (300, 400, 600 + italics)",
@@ -23,80 +32,281 @@
   "pages": {
     "home": {
       "path": "/",
-      "heading": "Drupal websites.",
+      "heading": "Senior Drupal engineer.",
       "body": [
-        "Wes Jones is a Web developer from **Rochester, NY**, specializing in **Drupal**, **Node.js**, and **multilingual website development**. Wes works for [**Kanopi Studios**](https://www.kanopi.com/).",
+        "Wes Jones is a Web developer from **Rochester, NY**, specializing in **Drupal**, **Amazon AWS**, and **multilingual website development**.",
         "Wes speaks Spanish and Mandarin Chinese fluently, and loves [**playing music!**](https://linktr.ee/wesperegrine) 🪕"
       ],
       "links": [
-        { "label": "View Work history", "path": "/work" },
-        { "label": "Download resume", "path": "/files/Resume-WesJones.pdf" }
-      ]
+        {
+          "label": "View Work history",
+          "path": "/work"
+        },
+        {
+          "label": "Download resume",
+          "path": "/files/Resume-WesJones.pdf"
+        }
+      ],
+      "skills": {
+        "heading": "Skills",
+        "groups": [
+          {
+            "label": "Platforms",
+            "items": [
+              "Drupal 7–11 architecture",
+              "Magento",
+              "Custom annotation engines",
+              "Image management systems"
+            ]
+          },
+          {
+            "label": "AI",
+            "items": [
+              "Claude AI & Claude Code",
+              "Prompt engineering",
+              "RAG (Zilliz vector DB)",
+              "Vertex AI model APIs"
+            ]
+          },
+          {
+            "label": "Cloud & DevOps",
+            "items": [
+              "AWS S3, Lambda, API Gateway",
+              "CloudFront CDN",
+              "Serverless architectures",
+              "CircleCI / Travis CI / Docker"
+            ]
+          },
+          {
+            "label": "Integrations & Code",
+            "items": [
+              "Salesforce API & data sync",
+              "Auth0 enterprise SSO",
+              "JavaScript / Node.js / React"
+            ]
+          }
+        ]
+      }
     },
     "work": {
       "path": "/work",
       "heading": "Work",
-      "intro": "View Wes Jones' work in **Web design**, **Drupal development**, and **PHP/MySQL application development**.",
+      "intro": "15+ years of **Drupal architecture**, **decoupled applications**, and **AWS cloud integrations** for enterprise and cultural clients.",
       "resumeButton": "View Wes' full resume »",
       "timelineHeading": "Timeline",
       "timeline": [
         {
-          "title": "Senior Engineer at Kanopi Studios",
-          "dates": "2022 - present",
-          "description": ["Drupal support services and development for clients in Drupal 7 and 9."],
+          "title": "Senior Software Engineer at Kanopi Studios",
+          "dates": "Sept 2022 – Present",
+          "location": "Remote",
+          "highlights": [
+            {
+              "label": "AWS Serverless API (twit.tv)",
+              "body": "Deployed serverless API architecture using AWS S3, Lambda, API Gateway, and CloudFront, replacing legacy third-party services."
+            },
+            {
+              "label": "Enterprise AI & RAG (UC Berkeley)",
+              "body": "Built a decoupled frontend and implemented RAG architecture using Zilliz vector database and Vertex AI model endpoints."
+            },
+            {
+              "label": "E-Commerce Marketplace & Client Solutions",
+              "body": "Architected Eye Recommend’s Marketplace platform and provided senior engineering support for SFO Airport and Golden Gate Parks Conservancy."
+            },
+            {
+              "label": "Enterprise API & SSO Integrations",
+              "body": "Implemented bi-directional Salesforce API synchronizations and Auth0 enterprise Single Sign-On across client platforms."
+            },
+            {
+              "label": "Global Infrastructure & AI Workflows",
+              "body": "Maintained China-hosted site for Smalley on Tencent Cloud; established company-wide AI prompt standards using Claude Code."
+            },
+            {
+              "label": "Interactive Educational Platforms (Gilder Lehrman Institute)",
+              "body": "Built AP history learning tools (APAAS, Declaration 250) featuring Annotorious text/image annotation, quiz engines, and progress tracking."
+            }
+          ],
           "projects": [
-            { "title": "The Gilder Lehrman Institute of American History", "links": ["https://www.gilderlehrman.org/"] }
+            {
+              "title": "The Gilder Lehrman Institute of American History",
+              "links": [
+                "https://www.gilderlehrman.org/"
+              ]
+            },
+            {
+              "title": "UC Berkeley Research",
+              "links": [
+                "https://vcresearch.berkeley.edu/"
+              ]
+            },
+            {
+              "title": "Golden Gate National Parks Conservancy",
+              "links": [
+                "https://www.parksconservancy.org/"
+              ]
+            },
+            {
+              "title": "Smalley",
+              "links": [
+                "https://www.smalley.com/"
+              ]
+            },
+            {
+              "title": "VirginiaNavigator",
+              "links": [
+                "https://virginianavigator.org/"
+              ]
+            },
+            {
+              "title": "General Data Company",
+              "links": [
+                "https://www.general-data.com/"
+              ]
+            }
           ]
         },
         {
-          "title": "Senior Engineer at Phase2 Technology",
-          "dates": "2022",
-          "description": ["Drupal backend development support and planning for enterprise level client projects."],
+          "title": "Senior Developer at Phase2 Technology",
+          "dates": "Jul 2022 – Sept 2022",
+          "location": "Arlington, VA (Remote)",
+          "highlights": [
+            {
+              "label": "Enterprise Drupal Engineering",
+              "body": "Delivered backend module engineering and technical strategy for large-scale enterprise clients."
+            },
+            {
+              "label": "Design System Integration",
+              "body": "Built component-driven design systems in Drupal using Web Components, Storybook, and React."
+            }
+          ],
           "projects": []
         },
         {
-          "title": "Senior Software Engineer / Technical Architect at Third and Grove",
-          "dates": "2017 - 2022",
-          "description": ["Development lead for projects, assisting with documentation, sprint planning, estimation, code review, and client communication."],
-          "projects": []
-        },
-        {
-          "title": "Software Engineer at Third & Grove",
-          "dates": "Feb 2015 - Feb 2016",
-          "description": ["Drupal website and application development for enterprise-level clients."],
+          "title": "Senior Software Engineer & Technical Architect at Third and Grove",
+          "dates": "Feb 2015 – Feb 2022",
+          "location": "Boston, MA (Remote)",
+          "highlights": [
+            {
+              "label": "Technical Leadership & Discovery",
+              "body": "Promoted to Technical Architect; led discovery sessions, architectural design, effort estimations, and sprint planning for enterprise clients."
+            },
+            {
+              "label": "Enterprise Redesign (CooperVision)",
+              "body": "Directed technical discovery, architecture, and engineering for the CooperVision redesign, delivering the 18-month project on time and on budget."
+            },
+            {
+              "label": "Custom Features (King Arthur Baking)",
+              "body": "Developed a custom interactive Recipe Builder and an automated parsing engine linking recipe instructions to e-commerce products."
+            },
+            {
+              "label": "E-Commerce & Cloud Infrastructure",
+              "body": "Led Magento development and engineered Drupal platforms hosted on AWS, Acquia, and Pantheon using Docker, Travis CI, and GitHub Actions."
+            }
+          ],
           "projects": [
-            { "title": "Quicken", "links": ["http://www.quicken.com/"] },
-            { "title": "King Arthur Flour", "links": ["https://www.kingarthurbaking.com/"] },
-            { "title": "CooperVision", "links": ["https://coopervision.com/"] },
-            { "title": "Third and Grove: Drupal 8 decoupled + Gatsby", "links": ["https://www.thirdandgrove.com/"] },
-            { "title": "Chestnut Hill Realty", "links": ["https://www.chr-apartments.com/"] }
+            {
+              "title": "Quicken",
+              "links": [
+                "http://www.quicken.com/"
+              ]
+            },
+            {
+              "title": "King Arthur Flour",
+              "links": [
+                "https://www.kingarthurbaking.com/"
+              ]
+            },
+            {
+              "title": "CooperVision",
+              "links": [
+                "https://coopervision.com/"
+              ]
+            },
+            {
+              "title": "Third and Grove: Drupal 8 decoupled + Gatsby",
+              "links": [
+                "https://www.thirdandgrove.com/"
+              ]
+            },
+            {
+              "title": "Chestnut Hill Realty",
+              "links": [
+                "https://www.chr-apartments.com/"
+              ]
+            }
           ]
         },
         {
-          "title": "Freelance Drupal Developer",
-          "dates": "Dec 2011 - present",
-          "description": ["Drupal and PHP application development consultant. Website design and development with PHP/MySQL, Drupal 6, Drupal 7, Wordpress, and more."],
+          "title": "Freelance Web Developer",
+          "dates": "Dec 2011 – Present",
+          "location": "Rochester, NY",
+          "highlights": [
+            {
+              "label": "Custom Web Solutions",
+              "body": "Built full-stack web applications for commercial and cultural clients, including Eastman Museum and Boston Museum of Science; Toptal network developer."
+            }
+          ],
           "projects": [
-            { "title": "George Eastman House - Technicolor100", "links": ["https://www.eastman.org/technicolor"] },
-            { "title": "Bayer Video Tours", "links": ["http://www.bayervideotours.com/"] },
-            { "title": "Museum of Science", "links": ["http://www.mos.org/", "http://livinglab.org/", "http://nanomedicine-explorer.net/"] }
+            {
+              "title": "George Eastman House - Technicolor100",
+              "links": [
+                "https://www.eastman.org/technicolor"
+              ]
+            },
+            {
+              "title": "Bayer Video Tours",
+              "links": [
+                "http://www.bayervideotours.com/"
+              ]
+            },
+            {
+              "title": "Museum of Science",
+              "links": [
+                "http://www.mos.org/",
+                "http://livinglab.org/",
+                "http://nanomedicine-explorer.net/"
+              ]
+            }
           ]
         },
         {
           "title": "SEO Specialist / Web Developer, Accelerate Media",
-          "dates": "Sept 2014 - Jan 2015",
-          "description": ["Website development with Wordpress, Web application development with Yii Framework. Project planning, workload balancing, QA and testing for team of 5 developers."],
+          "dates": "Sept 2014 – Jan 2015",
+          "description": [
+            "Website development with Wordpress, Web application development with Yii Framework. Project planning, workload balancing, QA and testing for team of 5 developers."
+          ],
           "projects": [
-            { "title": "Draft Sharks", "links": ["http://www.draftsharks.com/"] },
-            { "title": "Monroe Tractor", "links": ["http://www.monroetractor.com/"] },
-            { "title": "All Collector Cars", "links": ["http://www.allcollectorcars.com/"] },
-            { "title": "IASSIDD", "links": ["https://www.iassidd.org/"] }
+            {
+              "title": "Draft Sharks",
+              "links": [
+                "http://www.draftsharks.com/"
+              ]
+            },
+            {
+              "title": "Monroe Tractor",
+              "links": [
+                "http://www.monroetractor.com/"
+              ]
+            },
+            {
+              "title": "All Collector Cars",
+              "links": [
+                "http://www.allcollectorcars.com/"
+              ]
+            },
+            {
+              "title": "IASSIDD",
+              "links": [
+                "https://www.iassidd.org/"
+              ]
+            }
           ]
         },
         {
           "title": "Web Technologies Specialist, The Strong",
-          "dates": "May 2009 - Dec 2011",
-          "description": ["Website development and maintenance, Web application development for user-submission contests."],
+          "dates": "May 2009 – Dec 2011",
+          "description": [
+            "Website development and maintenance, Web application development for user-submission contests."
+          ],
           "projects": [
             {
               "title": "The Strong",
@@ -109,18 +319,28 @@
                 "http://www.libraryandarchivesofplay.org/"
               ]
             },
-            { "title": "The Strong Online Collections", "links": ["http://www.thestrong.org/online-collections/"] }
+            {
+              "title": "The Strong Online Collections",
+              "links": [
+                "http://www.thestrong.org/online-collections/"
+              ]
+            }
           ]
         },
         {
           "title": "Student Web Programmer, The College at Brockport",
-          "dates": "May 2008 - May 2009",
+          "dates": "May 2008 – May 2009",
           "description": [
             "Graduated with Bachelor's of Science in Computer Information Systems and Mathematics.",
             "Development contributed to campus website."
           ],
           "projects": [
-            { "title": "The College at Brockport", "links": ["http://www.brockport.edu/"] }
+            {
+              "title": "The College at Brockport",
+              "links": [
+                "http://www.brockport.edu/"
+              ]
+            }
           ]
         }
       ]

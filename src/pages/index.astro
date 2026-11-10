@@ -1,22 +1,53 @@
 ---
+import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
 import data from '../data/site.json';
 import { inline } from '../lib/markdown';
-import londonEye from '../assets/img/london-eye.jpg';
+import wesBass from '../assets/img/wes-bass.jpg';
 
 const { site, pages } = data;
 const page = pages.home;
 ---
 
 <Base title={site.homeTitle} bodyClass="home">
-  <Hero image={londonEye} fill>
-    <h1>{page.heading}</h1>
-    {page.body.map((p) => <p set:html={inline(p)} />)}
-    <ul class="hero__links">
-      {page.links.map((link) => (
-        <li><a href={link.path}>{link.label}</a></li>
+  <section class="home-hero">
+    <div class="home-hero__text">
+      <h1>{page.heading}</h1>
+      {page.body.map((p) => <p set:html={inline(p)} />)}
+      <ul class="actions">
+        {page.links.map((link, i) => (
+          <li>
+            <a class:list={['button', { 'button--secondary': i > 0 }]} href={link.path}>
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="home-hero__media">
+      <Picture
+        src={wesBass}
+        formats={['avif', 'webp']}
+        widths={[420, 640, 842]}
+        sizes="(min-width: 900px) 420px, 100vw"
+        alt="Wes Jones playing bass on an outdoor stage at night."
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <section class="section skills" aria-labelledby="skills-heading">
+    <h2 class="section__heading" id="skills-heading">{page.skills.heading}</h2>
+    <div class="skills__grid">
+      {page.skills.groups.map((group) => (
+        <div class="skills__group">
+          <h3 class="skills__label">{group.label}</h3>
+          <ul class="skills__list">
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
       ))}
-    </ul>
-  </Hero>
+    </div>
+  </section>
 </Base>

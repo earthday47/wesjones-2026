@@ -26,36 +26,39 @@ const year = new Date().getFullYear();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,600;1,400&family=Red+Hat+Display:wght@600;700;800&family=Red+Hat+Mono:wght@500;600&display=swap"
     />
   </head>
   <body class={bodyClass}>
     <div class="page">
       <header class="site-header">
-        <a class="site-brand" href="/">{site.name}</a>
-        <nav aria-label="Main">
-          <ul class="site-nav">
-            {site.nav.map((item) => (
-              <li>
-                <a href={item.path} aria-current={current === item.path ? 'page' : undefined}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div class="container">
+          <a class="site-brand" href="/">{site.name}</a>
+          <nav aria-label="Main">
+            <ul class="site-nav">
+              {site.nav.map((item) => (
+                <li>
+                  <a href={item.path} aria-current={current === item.path ? 'page' : undefined}>
+                    <span class="site-nav__label">{item.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </header>
 
-      <main class="site-main">
+      <main class="site-main container">
         <slot />
       </main>
 
       <footer class="site-footer">
-        <p class="site-footer__music">
-          <a href={site.musicLink.url}>{site.musicLink.label}</a> <span aria-hidden="true">🪕</span>
-        </p>
-        <hr />
-        <p class="site-footer__copyright">{site.copyright} {year}</p>
+        <div class="container">
+          <p>{site.copyright} {year}</p>
+          <p>
+            <a href={site.musicLink.url}>{site.musicLink.label}</a> <span aria-hidden="true">🪕</span>
+          </p>
+        </div>
       </footer>
     </div>
   </body>

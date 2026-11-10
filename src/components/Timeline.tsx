@@ -7,10 +7,17 @@ interface Project {
   links: string[];
 }
 
+interface Highlight {
+  label: string;
+  body: string;
+}
+
 interface Job {
   title: string;
   dates: string;
-  description: string[];
+  location?: string;
+  description?: string[];
+  highlights?: Highlight[];
   projects: Project[];
 }
 
@@ -18,20 +25,11 @@ interface Props {
   jobs: Job[];
 }
 
-function BriefcaseIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor">
-      <path d="M10 3h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4V5a2 2 0 0 1 2-2Zm0 3h4V5h-4v1Z" />
-    </svg>
-  );
-}
-
-function CogIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor">
-      <path d="M19.4 13a7.7 7.7 0 0 0 0-2l2.1-1.6-2-3.4-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3.3h-4l-.3 2.7a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.4L6.6 11a7.7 7.7 0 0 0 0 2l-2.1 1.6 2 3.4 2.5-1a7.6 7.6 0 0 0 1.7 1l.3 2.7h4l.3-2.7a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.4L19.4 13ZM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z" transform="translate(-1 0)" />
-    </svg>
-  );
+/**
+ * Strips the protocol and trailing slash for display.
+ */
+function displayUrl(url: string): string {
+  return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 }
 
 export default function Timeline({ jobs }: Props) {
@@ -39,39 +37,51 @@ export default function Timeline({ jobs }: Props) {
     <ol className="timeline">
       {jobs.map((job) => (
         <li key={job.title} className="timeline__job">
-          <article className="timeline__item timeline__item--job">
-            <span className="timeline__badge timeline__badge--job">
-              <BriefcaseIcon />
-            </span>
-            <div className="timeline__panel">
-              <h3 className="timeline__title">{job.title}</h3>
-              <p className="timeline__meta">{job.dates}</p>
+          <p className="timeline__meta">
+            {job.dates}
+            {job.location && <span className="timeline__location">{job.location}</span>}
+          </p>
+          <h3 className="timeline__title">{job.title}</h3>
+          {job.description && (
+            <div className="timeline__description">
               {job.description.map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
-          </article>
-
-          {job.projects.length > 0 && (
-            <ul className="timeline__projects">
-              {job.projects.map((project) => (
-                <li key={project.title} className="timeline__item timeline__item--project">
-                  <span className="timeline__badge timeline__badge--project">
-                    <CogIcon />
-                  </span>
-                  <div className="timeline__panel">
-                    <h4 className="timeline__title">{project.title}</h4>
-                    <ul className="timeline__links">
-                      {project.links.map((url) => (
-                        <li key={url}>
-                          <a href={url}>{url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+          )}
+          {job.highlights && (
+            <ul className="timeline__highlights">
+              {job.highlights.map((item) => (
+                <li key={item.label}>
+                  <strong>{item.label}:</strong> {item.body}
                 </li>
               ))}
             </ul>
+          )}
+
+          {job.projects.length > 0 && (
+            <div className="timeline__work">
+              <h4 className="timeline__work-label">Selected work</h4>
+              <ul className="timeline__projects">
+                {job.projects.map(({ title, links: [primary, ...more] }) => (
+                  <li key={title} className="timeline__project">
+                    <a className="timeline__project-link" href={primary} title={displayUrl(primary)}>
+                      {title}
+                      <span className="timeline__arrow" aria-hidden="true">↗</span>
+                    </a>
+                    {more.length > 0 && (
+                      <ul className="timeline__links">
+                        {more.map((url) => (
+                          <li key={url}>
+                            <a href={url}>{displayUrl(url)}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </li>
       ))}
