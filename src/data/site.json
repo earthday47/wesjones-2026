@@ -361,7 +361,7 @@
     "contact": {
       "path": "/contact",
       "heading": "Contact",
-      "body": "If you'd like to contact me about custom development, a Website project, or translation services, email me at [wes@wesjones.net](mailto:wes@wesjones.net).",
+      "body": "If you'd like to contact me about custom development, a Website project, or translation services, email me at {email}.",
       "email": "wes@wesjones.net"
     }
   }

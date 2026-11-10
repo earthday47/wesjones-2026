@@ -5,11 +5,28 @@ import { inline } from '../lib/markdown';
 
 const { site, pages } = data;
 const page = pages.contact;
+
+const [before, after] = page.body.split('{email}');
+const [user, domain] = page.email.split('@');
+// Only a reversed copy of the address reaches the HTML.
+const reversed = page.email.split('').reverse().join('');
+const fallback = `${user} [at] ${domain.replace(/\./g, ' [dot] ')}`;
 ---
 
 <Base title={`${page.heading} | ${site.name}`} bodyClass="contact">
   <div class="contact-block">
     <h1>{page.heading}</h1>
-    <p class="lead" set:html={inline(page.body)} />
+    <p class="lead">
+      <Fragment set:html={inline(before)} /><a class="email-link" data-email={reversed}>{fallback}</a><Fragment set:html={inline(after)} />
+    </p>
   </div>
 </Base>
+
+<script is:inline>
+  document.querySelectorAll('a[data-email]').forEach((link) => {
+    const address = link.dataset.email.split('').reverse().join('');
+    link.href = `mailto:${address}`;
+    link.textContent = address;
+    link.removeAttribute('data-email');
+  });
+</script>
