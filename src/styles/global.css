@@ -217,6 +217,12 @@ a:hover {
   color: var(--color-on-accent);
 }
 
+.button__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
 .button--secondary {
   border-color: var(--color-border-strong);
   background: rgb(14 16 19 / 0.4);

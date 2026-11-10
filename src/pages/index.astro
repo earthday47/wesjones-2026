@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import ProfileLinks from '../components/ProfileLinks.astro';
+import DownloadIcon from '../components/DownloadIcon.astro';
 import Base from '../layouts/Base.astro';
 import data from '../data/site.json';
 import { inline } from '../lib/markdown';
@@ -25,6 +26,7 @@ const headingLines = page.heading
           <li>
             <a class:list={['button', { 'button--secondary': i > 0 }]} href={link.path}>
               {link.label}
+              {link.path.endsWith('.pdf') && <DownloadIcon />}
             </a>
           </li>
         ))}

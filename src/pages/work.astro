@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PhotoStack from '../components/PhotoStack.astro';
+import DownloadIcon from '../components/DownloadIcon.astro';
 import Timeline from '../components/Timeline';
 import data from '../data/site.json';
 import { inline } from '../lib/markdown';
@@ -24,7 +25,7 @@ const photos = [
       <h1>{page.heading}</h1>
       <p set:html={inline(page.intro)} />
       <ul class="actions">
-        <li><a class="button" href={site.resume}>{page.resumeButton}</a></li>
+        <li><a class="button" href={site.resume}>{page.resumeButton}<DownloadIcon /></a></li>
       </ul>
     </div>
     <div class="split-hero__media">
