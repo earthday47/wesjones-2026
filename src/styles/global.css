@@ -13,7 +13,7 @@
   --font-head: 'Red Hat Display', system-ui, sans-serif;
   --font-body: 'Red Hat Text', system-ui, sans-serif;
   --font-meta: 'Red Hat Mono', ui-monospace, monospace;
-  --head-tracking: -0.04em;
+  --head-tracking: 0.01em;
   --radius: 1rem;
   --radius-sm: 0.625rem;
   --gutter: 1rem;
@@ -58,7 +58,7 @@ h4 {
   font-family: var(--font-head);
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.01em;
 }
 
 strong {
@@ -188,7 +188,7 @@ a:hover {
   margin-bottom: 2.5rem;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.01em;
 }
 
 .eyebrow {
@@ -270,10 +270,10 @@ a:hover {
 
 .split-hero__caption {
   line-height: 1.3;
-  margin-top: 0.625rem;
+  margin-top: 0.375rem;
   color: var(--color-muted);
   font-family: var(--font-meta);
-  font-size: 0.8125rem;
+  font-size: 0.6875rem;
   text-align: right;
 }
 
@@ -281,15 +281,15 @@ a:hover {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 2 / 1;
   object-fit: cover;
-  object-position: 50% 12%;
+  object-position: 50% 15%;
   border-radius: var(--radius);
   box-shadow: 0 1.5rem 5rem rgb(92 133 255 / 0.22);
 }
 
 .split-hero h1 {
-  font-size: clamp(2.25rem, 10vw, 4.5rem);
+  font-size: clamp(2rem, 10vw, 4.5rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: var(--head-tracking);
@@ -323,7 +323,7 @@ a:hover {
   }
 
   .split-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.25rem, min(5vw, 11.2vw - 3.75rem), 4.5rem);
   }
 
   .split-hero__media > picture img {
