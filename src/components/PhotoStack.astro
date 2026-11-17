@@ -27,7 +27,7 @@ const cards = await Promise.all(
         data-pos={i}
         src={card.src}
         srcset={card.srcset}
-        sizes="(min-width: 900px) 420px, 100vw"
+        sizes="(min-width: 1500px) 525px, (min-width: 1200px) 35vw, (min-width: 900px) 420px, 100vw"
         alt={card.alt}
         aria-hidden={i > 0 ? 'true' : undefined}
         loading={i === 0 ? 'eager' : 'lazy'}
