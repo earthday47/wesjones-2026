@@ -323,7 +323,7 @@ a:hover {
   }
 
   .split-hero h1 {
-    font-size: clamp(2.25rem, min(5vw, 10.2vw - 3.4rem), 4.5rem);
+    font-size: clamp(2.25rem, min(4.6vw, 10.2vw - 3.4rem), 3.45rem);
   }
 
   .split-hero__media > picture img {
